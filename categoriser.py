@@ -47,6 +47,11 @@ def total_per_category(df):
 # remove transfers as a category, and any associated money in/outs
 df = df[df['Category'] != 'Transfers']
 
-print(total_per_category(df).to_string())
+summed_categories = (total_per_category(df))
+
+print(summed_categories["Money Out"])
+for value in summed_categories["Money Out"]:
+    print(f"This value is of type {type(value)}")
+
 
 #print(df[["Description", "Category"]].to_string())
